@@ -1,0 +1,7 @@
+ 730	37.0 #     0.5	      # Energy incident electron, Scattering Angle
+ 6         12        #  nz, nA
+ 0                    # ifg
+ 2
+ 221.0                # Fermi momentum
+ 50                   # nw
+ 400                # wmax

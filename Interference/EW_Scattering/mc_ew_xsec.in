@@ -1,0 +1,19 @@
+100000           # number of events
+128              # number of walkers
+1000.   70.0      # ee theta
+600.0  100        # wmax,nw
+1				 # intf : 1 body xsec if eq to 0, otherwise compute 12b interference
+1                #exchange on
+1                 #direct on
+225.0             # xpf
+12                # xA
+0                 # i_fg : Fermi gas if eq to 1
+'pke12_tot.data' # file or normalized n(k)
+40   80              # np ne
+
+
+# 200 201 'pke_o16_scgf.dat'
+# 16 24  'pke12_MF_resc.out'
+# 200 301 'pke_c12_scgf.dat'
+# 40 80  'pke12_tot.data'
+# 200   150 'pke16.data'
