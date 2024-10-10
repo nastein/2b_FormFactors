@@ -373,11 +373,11 @@ subroutine int_eval(ctpp1,p2,ctp2,phip2,p1,ctp1,phip1,ip1,ip2,w,qval,r_now,nk)
    rho=xpf**3/(1.5d0*pi**2)
 
 !.......currents
-   call current_init(p1_4,p2_4,pp1_4,pp2_4,q_4,w,k1_4,k2_4,1,total_isospin)      
+   call current_init(p1_4,p2_4,pp1_4,pp2_4,q_4,k1_4,k2_4,1)      
    call define_spinors()
    call det_Jpi(gep)
    call det_JpiJpi(r_cc_pi,r_cl_pi,r_ll_pi,r_t_pi,r_tp_pi)
-   call det_JaJb_JcJd(e_gs,e_bg,cv3,ca5,np_del,pdel,pot_del)
+   call det_JaJb_JcJd(cv3,ca5,np_del,pdel,pot_del)
    call det_JaJc_dir(r_cc_del,r_cl_del,r_ll_del,r_t_del,r_tp_del)
    call det_JpiJaJb(r_cc_int,r_cl_int,r_ll_int,r_t_int,r_tp_int)
 
@@ -387,8 +387,8 @@ subroutine int_eval(ctpp1,p2,ctp2,phip2,p1,ctp1,phip1,ip1,ip2,w,qval,r_now,nk)
    dir(4)=r_t_pi+2.0d0*(r_t_del+r_t_int)
    dir(5)=r_tp_pi+2.0d0*(r_tp_del+r_tp_int)
    
-   call current_init(p1_4,p2_4,pp2_4,pp1_4,q_4,w,k1e_4,k2e_4,2,total_isospin)
-   call det_JaJb_JcJd(e_gs,e_bg,cv3,ca5,np_del,pdel,pot_del)
+   call current_init(p1_4,p2_4,pp2_4,pp1_4,q_4,k1e_4,k2e_4,2)
+   call det_JaJb_JcJd(cv3,ca5,np_del,pdel,pot_del)
    call det_JaJc_exc(r_cc_del,r_cl_del,r_ll_del,r_t_del,r_tp_del)
    call det_JpiJaJb_exc(r_cc_int,r_cl_int,r_ll_int,r_t_int,r_tp_int)
 
