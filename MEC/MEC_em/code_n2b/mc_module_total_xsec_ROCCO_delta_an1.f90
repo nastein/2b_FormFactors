@@ -262,7 +262,7 @@ subroutine int_eval(ctpp1,p2,ctp2,phip2,p1,ctp1,phip1,ip1,ip2,w,qval,r_now,nk)
    use dirac_matrices         
    use mathtool
    implicit none
-   real*8, parameter :: lsq=0.71*1.e6,l3=3.5d0*1.e6,xma2=1.1025d0*1.e6
+   real*8, parameter :: lsq=0.71*1.e6,l3=3.5d0*1.e6,xma2=1.1025d0*1.e6,xmad = 950.0d0
    real*8, parameter :: fstar=2.13d0,eps=10.0d0,e_gs=-92.16,e_bg=-64.75
    integer*4 :: ip1,ip2
    real*8 :: w,ctpp1,p2,ctp2,phip2,p1,ctp1,phip1,stpp1,stp1,stp2
@@ -369,7 +369,7 @@ subroutine int_eval(ctpp1,p2,ctp2,phip2,p1,ctp1,phip1,ip1,ip2,w,qval,r_now,nk)
    gep=1.0d0/(1.0d0-q2/lsq)**2 
    !ffgnd= fstar/(1.0d0-q2/lsq)**2/(1.0d0-q2/4.0d0/lsq)*sqrt(3.0d0/2.0d0)
    cv3=fstar/(1.0d0-q2/lsq)**2/(1.0d0-q2/4.0d0/lsq)*sqrt(3.0d0/2.0d0)
-   ca5=0.0d0
+   ca5=0.0d0! 1.18/(1.0d0-q2/xmad**2)**2 !....New axial form factor
    rho=xpf**3/(1.5d0*pi**2)
 
 !.......currents
